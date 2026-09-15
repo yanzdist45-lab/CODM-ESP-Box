@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.22.1)
+project(codm_esp_box)
+set(CMAKE_CXX_STANDARD 20)
+add_library(codm_esp_box SHARED main.cpp esp.cpp)
+target_include_directories(codm_esp_box PRIVATE . include)
+add_library(dobby STATIC IMPORTED)
+set_target_properties(dobby PROPERTIES IMPORTED_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/libs/arm64-v8a/libdobby.a)
+target_link_libraries(codm_esp_box dobby log dl EGL GLESv3)

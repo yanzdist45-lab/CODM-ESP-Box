@@ -1,0 +1,6 @@
+id=codm_esp_box
+name=CODM ESP Box
+version=0.1
+versionCode=1
+author=shikuro
+description=Zygisk GLES ESP Box prototype for CODM Garena
