@@ -15,6 +15,7 @@ jobs:
       - run: cmake --build build -j2
       - name: Package
         run: |
+          mkdir -p module/zygisk
           cp build/libcodm_esp_box.so module/zygisk/arm64-v8a.so
           cd module && zip -r ../CODM-ESP-Box.zip .
       - uses: actions/upload-artifact@v4
